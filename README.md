@@ -1,1 +1,1 @@
-This project will generate images of cats with various quotes based on use input
+This project will generate images of cats with various quotes based on user input. There will be three options: Mean Cat will generate a cat with an insulting quote, Nice Cat will generate a cat with an affirming quote, and Badass Cat will generate a cat with a Breaking Bad quote.
