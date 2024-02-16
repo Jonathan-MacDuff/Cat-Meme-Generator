@@ -30,7 +30,7 @@ const lineBreak = document.createElement("br");
 
 const catContainer = document.getElementById("cat-container");
 
-niceCatButton.addEventListener("click", function() {
+/*niceCatButton.addEventListener("click", function() {
     getCatImg()
         .then((catData) => {
             console.log("Cat data:", catData);
@@ -40,6 +40,50 @@ niceCatButton.addEventListener("click", function() {
             niceCatImg.className = "nice-cat"
 
             catContainer.appendChild(niceCatImg);
+
+            const niceCatImages = document.getElementsByClassName("nice-cat");
+
+            Array.from(niceCatImages).forEach((image) => {
+                image.addEventListener("mouseover", function() {
+                    image.style.border = "2px solid blue";
+                });
+                image.addEventListener("mouseout", function() {
+                    image.style.border = ""; 
+                });
+            });
+        })
+        .catch((error) => console.error("Error:", error));
+});*/
+
+niceCatButton.addEventListener("click", function() {
+    getCatImg()
+        .then((catData) => {
+            console.log("Cat data:", catData);
+            const niceCatContainer = document.createElement("div");
+            const niceCatImg = document.createElement("img");
+            niceCatImg.src = catData;
+            niceCatImg.alt = "Nice Cat";
+            niceCatImg.className = "nice-cat";
+            niceCatImg.style.width = "400px";
+            niceCatImg.style.height = "300px";
+
+            niceCatContainer.appendChild(niceCatImg);
+
+            niceCatContainer.appendChild(lineBreak);
+
+            quoteGrabber("https://www.affirmations.dev/")
+                .then((niceQuoteObj) => {
+                    const niceQuote = niceQuoteObj.affirmation;
+                    const niceCatQuote = document.createElement("p");
+                    niceCatQuote.textContent = niceQuote;
+                    niceCatContainer.appendChild(niceCatQuote);
+                    niceCatContainer.style.width = "400px";
+                    niceCatContainer.style.height = "400px";
+                })
+                .catch((error) => console.error("Error fetching quote:", error));
+
+            catContainer.appendChild(niceCatContainer);
+            catContainer.appendChild(lineBreak);
 
             const niceCatImages = document.getElementsByClassName("nice-cat");
 
