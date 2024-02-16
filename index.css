@@ -24,3 +24,15 @@ h1 {
     margin: auto;
     text-align: center;
 }
+
+.nice-cat {
+    background-color: rgb(214, 235, 255);
+}
+
+.mean-cat {
+    background-color: rgb(255, 228, 233);
+}
+
+.badass-cat {
+    background-color: rgb(220, 249, 220);
+}
