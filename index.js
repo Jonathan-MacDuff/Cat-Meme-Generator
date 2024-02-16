@@ -71,7 +71,7 @@ niceCatButton.addEventListener("click", function() {
 
             niceCatContainer.appendChild(lineBreak);
 
-            quoteGrabber("https://www.affirmations.dev/")
+            quoteGrabber("https://cors-anywhere.herokuapp.com/https://www.affirmations.dev/")
                 .then((niceQuoteObj) => {
                     const niceQuote = niceQuoteObj.affirmation;
                     const niceCatQuote = document.createElement("p");
@@ -115,7 +115,7 @@ meanCatButton.addEventListener("click", function() {
 
             meanCatContainer.appendChild(lineBreak);
 
-            quoteGrabber("https://evilinsult.com/generate_insult.php?lang=en&type=json")
+            quoteGrabber("https://cors-anywhere.herokuapp.com/https://evilinsult.com/generate_insult.php?lang=en&type=json")
                 .then((meanQuoteObj) => {
                     const meanQuote = meanQuoteObj.insult;
                     const meanCatQuote = document.createElement("p");
