@@ -60,12 +60,11 @@ niceCatButton.addEventListener("click", function() {
         .then((catData) => {
             console.log("Cat data:", catData);
             const niceCatContainer = document.createElement("div");
+            niceCatContainer.className = "single-cat-container";
             const niceCatImg = document.createElement("img");
             niceCatImg.src = catData;
             niceCatImg.alt = "Nice Cat";
-            niceCatImg.className = "nice-cat";
-            niceCatImg.style.width = "400px";
-            niceCatImg.style.height = "300px";
+            niceCatImg.classList.add("nice-cat", "cat-img");
 
             niceCatContainer.appendChild(niceCatImg);
 
@@ -77,8 +76,6 @@ niceCatButton.addEventListener("click", function() {
                     const niceCatQuote = document.createElement("p");
                     niceCatQuote.textContent = niceQuote;
                     niceCatContainer.appendChild(niceCatQuote);
-                    niceCatContainer.style.width = "400px";
-                    niceCatContainer.style.height = "400px";
                 })
                 .catch((error) => console.error("Error fetching quote:", error));
 
@@ -104,12 +101,11 @@ meanCatButton.addEventListener("click", function() {
         .then((catData) => {
             console.log("Cat data:", catData);
             const meanCatContainer = document.createElement("div");
+            meanCatContainer.className = "single-cat-container";
             const meanCatImg = document.createElement("img");
             meanCatImg.src = catData;
             meanCatImg.alt = "Mean Cat";
-            meanCatImg.className = "mean-cat";
-            meanCatImg.style.width = "400px";
-            meanCatImg.style.height = "300px";
+            meanCatImg.classList.add("mean-cat", "cat-img");
 
             meanCatContainer.appendChild(meanCatImg);
 
@@ -121,8 +117,6 @@ meanCatButton.addEventListener("click", function() {
                     const meanCatQuote = document.createElement("p");
                     meanCatQuote.textContent = meanQuote;
                     meanCatContainer.appendChild(meanCatQuote);
-                    meanCatContainer.style.width = "400px";
-                    meanCatContainer.style.height = "400px";
                 })
                 .catch((error) => console.error("Error fetching quote:", error));
 
@@ -148,12 +142,11 @@ badassCatButton.addEventListener("click", function() {
         .then((catData) => {
             console.log("Cat data:", catData);
             const badassCatContainer = document.createElement("div");
+            badassCatContainer.className = "single-cat-container";
             const badassCatImg = document.createElement("img");
             badassCatImg.src = catData;
             badassCatImg.alt = "Badass Cat";
-            badassCatImg.className = "badass-cat";
-            badassCatImg.style.width = "400px";
-            badassCatImg.style.height = "300px";
+            badassCatImg.classList.add("badass-cat", "cat-img");
 
             badassCatContainer.appendChild(badassCatImg);
 
@@ -165,8 +158,6 @@ badassCatButton.addEventListener("click", function() {
                     const badassCatQuote = document.createElement("p");
                     badassCatQuote.textContent = badassQuote;
                     badassCatContainer.appendChild(badassCatQuote);
-                    badassCatContainer.style.width = "400px";
-                    badassCatContainer.style.height = "400px";
                 })
                 .catch((error) => console.error("Error fetching quote:", error));
 
