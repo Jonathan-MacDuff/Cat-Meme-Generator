@@ -21,7 +21,9 @@ function catDivMaker(catData) {
 };
 
 function quoteGrabber(apiLink) {
-    return fetch(`${apiLink}`)
+    const headers = new Headers({
+        'Origin': 'https://jonnymanchild.github.io/phase-1-final-project/', });
+    return fetch(apiLink, { headers })
         .then((resp) => resp.json())
         .then((json) => {
             return json;
