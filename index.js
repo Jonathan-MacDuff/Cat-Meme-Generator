@@ -35,9 +35,6 @@ function catDivMaker(catData) {
 const niceCatButton = document.getElementById("nice-cat-button");
 const meanCatButton = document.getElementById("mean-cat-button");
 const badassCatButton = document.getElementById("badass-cat-button");
-
-const lineBreak = document.createElement("br");
-
 const catContainer = document.getElementById("cat-container");
 
 niceCatButton.addEventListener("click", function() {
@@ -51,12 +48,13 @@ niceCatButton.addEventListener("click", function() {
                     const niceQuote = niceQuoteObj.affirmation;
                     const niceCatQuote = document.createElement("p");
                     niceCatQuote.textContent = niceQuote;
+                    niceCatQuote.className = "cat-quote";
                     niceCatContainer.appendChild(niceCatQuote);
                 })
                 .catch((error) => console.error("Error fetching quote:", error));
 
             catContainer.appendChild(niceCatContainer);
-            catContainer.appendChild(lineBreak);
+            catContainer.appendChild(document.createElement("br"));
 
             const niceCatImages = document.getElementsByClassName("nice-cat");
 
@@ -83,12 +81,13 @@ meanCatButton.addEventListener("click", function() {
                     const meanQuote = meanQuoteObj.insult;
                     const meanCatQuote = document.createElement("p");
                     meanCatQuote.textContent = meanQuote;
+                    meanCatQuote.className = "cat-quote";
                     meanCatContainer.appendChild(meanCatQuote);
                 })
                 .catch((error) => console.error("Error fetching quote:", error));
 
             catContainer.appendChild(meanCatContainer);
-            catContainer.appendChild(lineBreak);
+            catContainer.appendChild(document.createElement("br"));
 
             const meanCatImages = document.getElementsByClassName("mean-cat");
 
@@ -115,12 +114,13 @@ badassCatButton.addEventListener("click", function() {
                     const badassQuote = badassQuoteArr[0].quote;
                     const badassCatQuote = document.createElement("p");
                     badassCatQuote.textContent = badassQuote;
+                    badassCatQuote.className = "cat-quote";
                     badassCatContainer.appendChild(badassCatQuote);
                 })
                 .catch((error) => console.error("Error fetching quote:", error));
 
             catContainer.appendChild(badassCatContainer);
-            catContainer.appendChild(lineBreak);
+            catContainer.appendChild(document.createElement("br"));
 
             const badassCatImages = document.getElementsByClassName("badass-cat");
 

@@ -1,9 +1,26 @@
 .cat-img {
-    width: 400px;
-    height: 300PX;
+    width: 70vw;
+    aspect-ratio: 1/.75;
+    margin: auto;
 }
 
 .single-cat-container {
-    width: 400px;
-    height: 400px;
+    width: 70vw;
+    aspect-ratio: 1/.75;
+    margin: auto;
+}
+
+.cat-quote {
+    margin:auto;
+    text-align: center;
+}
+
+#button-container {
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    margin: auto;
+    text-align: center;
 }
