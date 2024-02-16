@@ -16,6 +16,31 @@ const badassCatButton = document.getElementById("badass-cat-button");
 
 const catContainer = document.getElementById("cat-container");
 
+niceCatButton.addEventListener("click", function() {
+    getCatImg()
+        .then((catData) => {
+            console.log("Cat data:", catData);
+            const niceCatImg = document.createElement("img");
+            niceCatImg.src = catData;
+            niceCatImg.alt = "Mean Cat";
+            niceCatImg.className = "nice-cat"
+
+            catContainer.appendChild(niceCatImg);
+
+            const niceCatImages = document.getElementsByClassName("nice-cat");
+
+            Array.from(niceCatImages).forEach((image) => {
+                image.addEventListener("mouseover", function() {
+                    image.style.border = "2px solid blue";
+                });
+                image.addEventListener("mouseout", function() {
+                    image.style.border = ""; 
+                });
+            });
+        })
+        .catch((error) => console.error("Error:", error));
+});
+
 meanCatButton.addEventListener("click", function() {
     getCatImg()
         .then((catData) => {
@@ -27,15 +52,41 @@ meanCatButton.addEventListener("click", function() {
 
             catContainer.appendChild(meanCatImg);
 
-            const meanCatImages = document.getElementsByClassName("mean-cat")
+            const meanCatImages = document.getElementsByClassName("mean-cat");
+
             Array.from(meanCatImages).forEach((image) => {
                 image.addEventListener("mouseover", function() {
                     image.style.border = "2px solid red";
-                })
+                });
                 image.addEventListener("mouseout", function() {
                     image.style.border = ""; 
-                })
-            })
+                });
+            });
+        })
+        .catch((error) => console.error("Error:", error));
+});
+
+badassCatButton.addEventListener("click", function() {
+    getCatImg()
+        .then((catData) => {
+            console.log("Cat data:", catData);
+            const badassCatImg = document.createElement("img");
+            badassCatImg.src = catData;
+            badassCatImg.alt = "Mean Cat";
+            badassCatImg.className = "badass-cat"
+
+            catContainer.appendChild(badassCatImg);
+
+            const badassCatImages = document.getElementsByClassName("badass-cat");
+
+            Array.from(badassCatImages).forEach((image) => {
+                image.addEventListener("mouseover", function() {
+                    image.style.border = "2px solid green";
+                });
+                image.addEventListener("mouseout", function() {
+                    image.style.border = ""; 
+                });
+            });
         })
         .catch((error) => console.error("Error:", error));
 });
