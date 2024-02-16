@@ -17,7 +17,7 @@ function quoteGrabber(apiLink) {
             return json;
         })
         .catch((error) => {
-            console.error("Error fetching quote:", error);
+            console.error("Error fetching cat:", error);
             throw error;
         });
 }
@@ -71,11 +71,11 @@ niceCatButton.addEventListener("click", function() {
 
             niceCatContainer.appendChild(lineBreak);
 
-            fetch('http://localhost:3000/getAffirmation')
-            .then(response => response.json())
-            .then(data => {
+            quoteGrabber("https://www.affirmations.dev/")
+                .then((niceQuoteObj) => {
+                    const niceQuote = niceQuoteObj.affirmation;
                     const niceCatQuote = document.createElement("p");
-                    niceCatQuote.textContent = data.affirmation;
+                    niceCatQuote.textContent = niceQuote;
                     niceCatContainer.appendChild(niceCatQuote);
                     niceCatContainer.style.width = "400px";
                     niceCatContainer.style.height = "400px";
@@ -99,18 +99,6 @@ niceCatButton.addEventListener("click", function() {
         .catch((error) => console.error("Error:", error));
 });
 
-/*function fetchRandomInsult() {
-    const apiUrl = 'https://evilinsult.com/generate_insult.php?lang=en&type=json';
-
-    return fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => data.insult)
-        .catch(error => {
-            console.error('Error fetching insult:', error);
-            return 'Failed to fetch insult';
-        });
-}*/
-
 meanCatButton.addEventListener("click", function() {
     getCatImg()
         .then((catData) => {
@@ -127,18 +115,16 @@ meanCatButton.addEventListener("click", function() {
 
             meanCatContainer.appendChild(lineBreak);
 
-        fetch('http://localhost:3000/getInsult')
-            .then(response => response.json())
-            .then(data => {
-                const meanCatContainer = document.createElement('div');
-                const meanCatQuote = document.createElement('p');
-                meanCatQuote.textContent = data.insult;
-                meanCatContainer.appendChild(meanCatQuote);
-
-                const catContainer = document.getElementById('cat-container');
-                catContainer.appendChild(meanCatContainer);
-            })
-            .catch(error => console.error('Error fetching insult:', error));
+            quoteGrabber("https://evilinsult.com/generate_insult.php?lang=en&type=json")
+                .then((meanQuoteObj) => {
+                    const meanQuote = meanQuoteObj.insult;
+                    const meanCatQuote = document.createElement("p");
+                    meanCatQuote.textContent = meanQuote;
+                    meanCatContainer.appendChild(meanCatQuote);
+                    meanCatContainer.style.width = "400px";
+                    meanCatContainer.style.height = "400px";
+                })
+                .catch((error) => console.error("Error fetching quote:", error));
 
             catContainer.appendChild(meanCatContainer);
             catContainer.appendChild(lineBreak);
