@@ -10,9 +10,23 @@ function getCatImg() {
         });
 };
 
+function quoteGrabber(apiLink) {
+    return fetch(`${apiLink}`)
+        .then((resp) => resp.json())
+        .then((json) => {
+            return json[0];
+        })
+        .catch((error) => {
+            console.error("Error fetching cat:", error);
+            throw error;
+        });
+}
+
 const niceCatButton = document.getElementById("nice-cat-button");
 const meanCatButton = document.getElementById("mean-cat-button");
 const badassCatButton = document.getElementById("badass-cat-button");
+
+const lineBreak = document.createElement("br");
 
 const catContainer = document.getElementById("cat-container");
 
@@ -70,12 +84,26 @@ badassCatButton.addEventListener("click", function() {
     getCatImg()
         .then((catData) => {
             console.log("Cat data:", catData);
+            const badassCatContainer = document.createElement("div");
             const badassCatImg = document.createElement("img");
             badassCatImg.src = catData;
             badassCatImg.alt = "Mean Cat";
-            badassCatImg.className = "badass-cat"
+            badassCatImg.className = "badass-cat";
 
-            catContainer.appendChild(badassCatImg);
+            badassCatContainer.appendChild(badassCatImg);
+
+            badassCatContainer.appendChild(lineBreak);
+
+            quoteGrabber("https://api.breakingbadquotes.xyz/v1/quotes")
+                .then((badassQuoteObj) => {
+                    const badassQuote = badassQuoteObj.quote;
+                    const badassCatQuote = document.createElement("p");
+                    badassCatQuote.textContent = badassQuote;
+                    badassCatContainer.appendChild(badassCatQuote);
+                })
+                .catch((error) => console.error("Error fetching quote:", error));
+
+            catContainer.appendChild(badassCatContainer);
 
             const badassCatImages = document.getElementsByClassName("badass-cat");
 
