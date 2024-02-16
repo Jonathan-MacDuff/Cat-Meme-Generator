@@ -20,7 +20,17 @@ function quoteGrabber(apiLink) {
             console.error("Error fetching cat:", error);
             throw error;
         });
-}
+};
+
+function catDivMaker(catData) {
+    const singleCatContainer = document.createElement("div");
+            singleCatContainer.className = "single-cat-container";
+            catImg = document.createElement("img");
+            catImg.src = catData;
+            catImg.classList.add("cat-img");
+            singleCatContainer.appendChild(catImg);
+            return singleCatContainer;
+};
 
 const niceCatButton = document.getElementById("nice-cat-button");
 const meanCatButton = document.getElementById("mean-cat-button");
@@ -30,45 +40,11 @@ const lineBreak = document.createElement("br");
 
 const catContainer = document.getElementById("cat-container");
 
-/*niceCatButton.addEventListener("click", function() {
-    getCatImg()
-        .then((catData) => {
-            console.log("Cat data:", catData);
-            const niceCatImg = document.createElement("img");
-            niceCatImg.src = catData;
-            niceCatImg.alt = "Nice Cat";
-            niceCatImg.className = "nice-cat"
-
-            catContainer.appendChild(niceCatImg);
-
-            const niceCatImages = document.getElementsByClassName("nice-cat");
-
-            Array.from(niceCatImages).forEach((image) => {
-                image.addEventListener("mouseover", function() {
-                    image.style.border = "2px solid blue";
-                });
-                image.addEventListener("mouseout", function() {
-                    image.style.border = ""; 
-                });
-            });
-        })
-        .catch((error) => console.error("Error:", error));
-});*/
-
 niceCatButton.addEventListener("click", function() {
     getCatImg()
         .then((catData) => {
-            console.log("Cat data:", catData);
-            const niceCatContainer = document.createElement("div");
-            niceCatContainer.className = "single-cat-container";
-            const niceCatImg = document.createElement("img");
-            niceCatImg.src = catData;
-            niceCatImg.alt = "Nice Cat";
-            niceCatImg.classList.add("nice-cat", "cat-img");
-
-            niceCatContainer.appendChild(niceCatImg);
-
-            niceCatContainer.appendChild(lineBreak);
+            const niceCatContainer = catDivMaker(catData);
+            niceCatContainer.classList.add("nice-cat");
 
             quoteGrabber("https://cors-anywhere.herokuapp.com/https://www.affirmations.dev/")
                 .then((niceQuoteObj) => {
@@ -99,17 +75,8 @@ niceCatButton.addEventListener("click", function() {
 meanCatButton.addEventListener("click", function() {
     getCatImg()
         .then((catData) => {
-            console.log("Cat data:", catData);
-            const meanCatContainer = document.createElement("div");
-            meanCatContainer.className = "single-cat-container";
-            const meanCatImg = document.createElement("img");
-            meanCatImg.src = catData;
-            meanCatImg.alt = "Mean Cat";
-            meanCatImg.classList.add("mean-cat", "cat-img");
-
-            meanCatContainer.appendChild(meanCatImg);
-
-            meanCatContainer.appendChild(lineBreak);
+            const meanCatContainer = catDivMaker(catData);
+            meanCatContainer.classList.add("mean-cat");
 
             quoteGrabber("https://cors-anywhere.herokuapp.com/https://evilinsult.com/generate_insult.php?lang=en&type=json")
                 .then((meanQuoteObj) => {
@@ -140,17 +107,8 @@ meanCatButton.addEventListener("click", function() {
 badassCatButton.addEventListener("click", function() {
     getCatImg()
         .then((catData) => {
-            console.log("Cat data:", catData);
-            const badassCatContainer = document.createElement("div");
-            badassCatContainer.className = "single-cat-container";
-            const badassCatImg = document.createElement("img");
-            badassCatImg.src = catData;
-            badassCatImg.alt = "Badass Cat";
-            badassCatImg.classList.add("badass-cat", "cat-img");
-
-            badassCatContainer.appendChild(badassCatImg);
-
-            badassCatContainer.appendChild(lineBreak);
+            const badassCatContainer = catDivMaker(catData);
+            badassCatContainer.classList.add("badass-cat");
 
             quoteGrabber("https://api.breakingbadquotes.xyz/v1/quotes")
                 .then((badassQuoteArr) => {
