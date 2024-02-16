@@ -89,6 +89,8 @@ badassCatButton.addEventListener("click", function() {
             badassCatImg.src = catData;
             badassCatImg.alt = "Mean Cat";
             badassCatImg.className = "badass-cat";
+            badassCatImg.style.width = "400px";
+            badassCatImg.style.height = "300px";
 
             badassCatContainer.appendChild(badassCatImg);
 
@@ -100,10 +102,13 @@ badassCatButton.addEventListener("click", function() {
                     const badassCatQuote = document.createElement("p");
                     badassCatQuote.textContent = badassQuote;
                     badassCatContainer.appendChild(badassCatQuote);
+                    badassCatContainer.style.width = "400px";
+                    badassCatContainer.style.height = "400px";
                 })
                 .catch((error) => console.error("Error fetching quote:", error));
 
             catContainer.appendChild(badassCatContainer);
+            catContainer.appendChild(lineBreak);
 
             const badassCatImages = document.getElementsByClassName("badass-cat");
 
