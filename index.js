@@ -21,8 +21,6 @@ function catDivMaker(catData) {
 };
 
 function quoteGrabber(apiLink) {
-    const headers = new Headers({
-        'Origin': 'https://jonnymanchild.github.io/phase-1-final-project/', });
     return fetch(apiLink, { headers })
         .then((resp) => resp.json())
         .then((json) => {
@@ -83,7 +81,7 @@ meanCatButton.addEventListener("click", function() {
             const catContainer = catDivMaker(catData);
             catContainer.classList.add("mean-cat");
 
-            quoteGrabber("https://cors-anywhere.herokuapp.com/https://evilinsult.com/generate_insult.php?lang=en&type=json")
+            quoteGrabber("https://evilinsult.com/generate_insult.php?lang=en&type=json")
                 .then((meanQuoteObj) => {
                     const catQuote = meanQuoteObj.insult;
                     const singleCatQuote = quoteAdder(catQuote);
