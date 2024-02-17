@@ -27,7 +27,7 @@ function quoteGrabber(apiLink) {
             return json;
         })
         .catch((error) => {
-            console.error("Error fetching cat:", error);
+            console.error("Error fetching quote:", error);
             throw error;
         });
 };
@@ -81,7 +81,7 @@ meanCatButton.addEventListener("click", function() {
             const catContainer = catDivMaker(catData);
             catContainer.classList.add("mean-cat");
 
-            quoteGrabber("https://evilinsult.com/generate_insult.php?lang=en&type=json")
+            quoteGrabber("https://cors-anywhere.herokuapp.com/https://evilinsult.com/generate_insult.php?lang=en&type=json")
                 .then((meanQuoteObj) => {
                     const catQuote = meanQuoteObj.insult;
                     const singleCatQuote = quoteAdder(catQuote);
