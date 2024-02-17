@@ -21,7 +21,7 @@ function catDivMaker(catData) {
 };
 
 function quoteGrabber(apiLink) {
-    return fetch(apiLink, { headers })
+    return fetch(apiLink)
         .then((resp) => resp.json())
         .then((json) => {
             return json;
