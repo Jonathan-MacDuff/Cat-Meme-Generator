@@ -36,6 +36,21 @@ h1 {
     background-color: rgb(220, 249, 220);
 }
 
+.blue-border {
+    border-style: solid;
+    border-color: blue;
+}
+
+.red-border {
+    border-style: solid;
+    border-color: red;
+}
+
+.green-border {
+    border-style: solid;
+    border-color: green;
+}
+
 #button-container {
     margin: auto;
     text-align: center;

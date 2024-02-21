@@ -2,7 +2,7 @@ function getCatImg() {
     return fetch("https://api.thecatapi.com/v1/images/search?limit=10")
         .then((resp) => resp.json())
         .then((json) => {
-            return json[0].url;
+            return json[Math.floor(Math.random() * 10)].url;
         })
         .catch((error) => {
             console.error("Error fetching cat:", error);
@@ -65,10 +65,10 @@ niceCatButton.addEventListener("click", function() {
 
             Array.from(niceCatImages).forEach((image) => {
                 image.addEventListener("mouseover", function() {
-                    image.style.border = "2px solid blue";
+                    image.classList.add("blue-border");
                 });
                 image.addEventListener("mouseout", function() {
-                    image.style.border = ""; 
+                    image.classList.remove("blue-border"); 
                 });
             });
         })
@@ -96,10 +96,10 @@ meanCatButton.addEventListener("click", function() {
 
             Array.from(meanCatImages).forEach((image) => {
                 image.addEventListener("mouseover", function() {
-                    image.style.border = "2px solid red";
+                    image.classList.add("red-border");
                 });
                 image.addEventListener("mouseout", function() {
-                    image.style.border = ""; 
+                    image.classList.remove("red-border"); 
                 });
             });
         })
@@ -127,10 +127,10 @@ badassCatButton.addEventListener("click", function() {
 
             Array.from(badassCatImages).forEach((image) => {
                 image.addEventListener("mouseover", function() {
-                    image.style.border = "2px solid green";
+                    image.classList.add("green-border");
                 });
                 image.addEventListener("mouseout", function() {
-                    image.style.border = ""; 
+                    image.classList.remove("green-border"); 
                 });
             });
         })
