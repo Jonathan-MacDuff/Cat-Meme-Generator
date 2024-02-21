@@ -12,4 +12,4 @@ Mean Quotes: courtesy of https://evilinsult.com
 
 Badass Quotes: courtesy of https://api.breakingbadquotes.xyz
 
-API Compatibility: courtesy of https://cors-anywhere.herokuapp.comk
+API Compatibility: courtesy of https://cors-anywhere.herokuapp.com

@@ -1,3 +1,8 @@
+h1 {
+    margin: auto;
+    text-align: center;
+}
+
 .cat-img {
     width: 80%;
     height: auto;
@@ -19,16 +24,6 @@
     text-align: center;
 }
 
-#button-container {
-    margin: auto;
-    text-align: center;
-}
-
-h1 {
-    margin: auto;
-    text-align: center;
-}
-
 .nice-cat {
     background-color: rgb(214, 235, 255);
 }
@@ -39,4 +34,9 @@ h1 {
 
 .badass-cat {
     background-color: rgb(220, 249, 220);
+}
+
+#button-container {
+    margin: auto;
+    text-align: center;
 }
