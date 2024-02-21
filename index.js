@@ -70,6 +70,14 @@ niceCatButton.addEventListener("click", function() {
                 image.addEventListener("mouseout", function() {
                     image.classList.remove("blue-border"); 
                 });
+                image.addEventListener("dblclick", function() {
+                    if (image.classList.contains("perm-blue-border")) {
+                        image.classList.remove("perm-blue-border");
+                    }
+                    else {
+                        image.classList.add("perm-blue-border");
+                    };
+                });
             });
         })
         .catch((error) => console.error("Error:", error));
@@ -101,6 +109,14 @@ meanCatButton.addEventListener("click", function() {
                 image.addEventListener("mouseout", function() {
                     image.classList.remove("red-border"); 
                 });
+                image.addEventListener("dblclick", function() {
+                    if (image.classList.contains("perm-red-border")) {
+                        image.classList.remove("perm-red-border");
+                    }
+                    else {
+                        image.classList.add("perm-red-border");
+                    };
+                });
             });
         })
         .catch((error) => console.error("Error:", error));
@@ -131,6 +147,14 @@ badassCatButton.addEventListener("click", function() {
                 });
                 image.addEventListener("mouseout", function() {
                     image.classList.remove("green-border"); 
+                });
+                image.addEventListener("dblclick", function() {
+                    if (image.classList.contains("perm-green-border")) {
+                        image.classList.remove("perm-green-border");
+                    }
+                    else {
+                        image.classList.add("perm-green-border");
+                    };
                 });
             });
         })

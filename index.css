@@ -51,6 +51,21 @@ h1 {
     border-color: green;
 }
 
+.perm-blue-border {
+    border-style: solid;
+    border-color: blue;
+}
+
+.perm-red-border {
+    border-style: solid;
+    border-color: red;
+}
+
+.perm-green-border {
+    border-style: solid;
+    border-color: green;
+}
+
 #button-container {
     margin: auto;
     text-align: center;
