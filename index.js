@@ -8,6 +8,7 @@ function getCatImg() {
             console.error("Error fetching cat:", error);
             throw error;
         });
+        
 };
 
 function catDivMaker(catData) {
@@ -44,7 +45,7 @@ const meanCatButton = document.getElementById("mean-cat-button");
 const badassCatButton = document.getElementById("badass-cat-button");
 const allCatsContainer = document.getElementById("cat-container");
 
-niceCatButton.addEventListener("click", function() {
+niceCatButton.addEventListener("click", () => {
     getCatImg()
         .then((catData) => {
             const catContainer = catDivMaker(catData);
@@ -64,13 +65,13 @@ niceCatButton.addEventListener("click", function() {
             const niceCatImages = document.getElementsByClassName("nice-cat");
 
             Array.from(niceCatImages).forEach((image) => {
-                image.addEventListener("mouseover", function() {
+                image.addEventListener("mouseover", () => {
                     image.classList.add("blue-border");
                 });
-                image.addEventListener("mouseout", function() {
+                image.addEventListener("mouseout", () => {
                     image.classList.remove("blue-border"); 
                 });
-                image.addEventListener("dblclick", function() {
+                image.addEventListener("dblclick", () => {
                     if (image.classList.contains("perm-blue-border")) {
                         image.classList.remove("perm-blue-border");
                     }
@@ -83,7 +84,7 @@ niceCatButton.addEventListener("click", function() {
         .catch((error) => console.error("Error:", error));
 });
 
-meanCatButton.addEventListener("click", function() {
+meanCatButton.addEventListener("click", () => {
     getCatImg()
         .then((catData) => {
             const catContainer = catDivMaker(catData);
@@ -103,13 +104,13 @@ meanCatButton.addEventListener("click", function() {
             const meanCatImages = document.getElementsByClassName("mean-cat");
 
             Array.from(meanCatImages).forEach((image) => {
-                image.addEventListener("mouseover", function() {
+                image.addEventListener("mouseover", () => {
                     image.classList.add("red-border");
                 });
-                image.addEventListener("mouseout", function() {
+                image.addEventListener("mouseout", () => {
                     image.classList.remove("red-border"); 
                 });
-                image.addEventListener("dblclick", function() {
+                image.addEventListener("dblclick", () => {
                     if (image.classList.contains("perm-red-border")) {
                         image.classList.remove("perm-red-border");
                     }
@@ -122,7 +123,7 @@ meanCatButton.addEventListener("click", function() {
         .catch((error) => console.error("Error:", error));
 });
 
-badassCatButton.addEventListener("click", function() {
+badassCatButton.addEventListener("click", () => {
     getCatImg()
         .then((catData) => {
             const catContainer = catDivMaker(catData);
@@ -142,13 +143,13 @@ badassCatButton.addEventListener("click", function() {
             const badassCatImages = document.getElementsByClassName("badass-cat");
 
             Array.from(badassCatImages).forEach((image) => {
-                image.addEventListener("mouseover", function() {
+                image.addEventListener("mouseover", () => {
                     image.classList.add("green-border");
                 });
-                image.addEventListener("mouseout", function() {
+                image.addEventListener("mouseout", () => {
                     image.classList.remove("green-border"); 
                 });
-                image.addEventListener("dblclick", function() {
+                image.addEventListener("dblclick", () => {
                     if (image.classList.contains("perm-green-border")) {
                         image.classList.remove("perm-green-border");
                     }
