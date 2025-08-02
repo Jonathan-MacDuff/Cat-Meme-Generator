@@ -60,7 +60,7 @@ niceCatButton.addEventListener("click", () => {
                 .catch((error) => console.error("Error fetching quote:", error));
 
             allCatsContainer.appendChild(catContainer);
-            allCatsContainer.appendChild(document.createElement("br"));
+            allCatsContainer.prepend(catContainer);
 
             const niceCatImages = document.getElementsByClassName("nice-cat");
 
@@ -71,7 +71,7 @@ niceCatButton.addEventListener("click", () => {
                 image.addEventListener("mouseout", () => {
                     image.classList.remove("blue-border"); 
                 });
-                image.addEventListener("dblclick", () => {
+                image.addEventListener("click", () => {
                     if (image.classList.contains("perm-blue-border")) {
                         image.classList.remove("perm-blue-border");
                     }
@@ -99,7 +99,7 @@ meanCatButton.addEventListener("click", () => {
                 .catch((error) => console.error("Error fetching quote:", error));
 
             allCatsContainer.appendChild(catContainer);
-            allCatsContainer.appendChild(document.createElement("br"));
+            allCatsContainer.prepend(catContainer);
 
             const meanCatImages = document.getElementsByClassName("mean-cat");
 
@@ -110,7 +110,7 @@ meanCatButton.addEventListener("click", () => {
                 image.addEventListener("mouseout", () => {
                     image.classList.remove("red-border"); 
                 });
-                image.addEventListener("dblclick", () => {
+                image.addEventListener("click", () => {
                     if (image.classList.contains("perm-red-border")) {
                         image.classList.remove("perm-red-border");
                     }
@@ -138,7 +138,7 @@ badassCatButton.addEventListener("click", () => {
                 .catch((error) => console.error("Error fetching quote:", error));
 
             allCatsContainer.appendChild(catContainer);
-            allCatsContainer.appendChild(document.createElement("br"));
+            allCatsContainer.prepend(catContainer);
 
             const badassCatImages = document.getElementsByClassName("badass-cat");
 
@@ -149,7 +149,7 @@ badassCatButton.addEventListener("click", () => {
                 image.addEventListener("mouseout", () => {
                     image.classList.remove("green-border"); 
                 });
-                image.addEventListener("dblclick", () => {
+                image.addEventListener("click", () => {
                     if (image.classList.contains("perm-green-border")) {
                         image.classList.remove("perm-green-border");
                     }

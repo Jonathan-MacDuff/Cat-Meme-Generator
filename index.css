@@ -1,72 +1,142 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  background: url('/assets/Pink Wave.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Page Title */
 h1 {
-    margin: auto;
-    text-align: center;
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  color: #fff;
 }
 
-.cat-img {
-    width: 80%;
-    height: auto;
-    display: block;
-    margin: auto;
+/* Button Styling */
+button {
+  margin: 1rem 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: #fff;
+  backdrop-filter: blur(4px);
 }
 
-.single-cat-container {
-    width: 75vw;
-    aspect-ratio: 1/.75;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Colored Buttons */
+#nice-cat-button {
+  background-color: rgba(102, 204, 255, 0.8); /* light blue */
+}
+#nice-cat-button:hover {
+  background-color: rgba(102, 204, 255, 1);
 }
 
-.cat-quote {
-    margin:auto;
-    text-align: center;
+#mean-cat-button {
+  background-color: rgba(255, 69, 58, 0.8); /* red */
+}
+#mean-cat-button:hover {
+  background-color: rgba(255, 69, 58, 1);
 }
 
-.nice-cat {
-    background-color: rgb(214, 235, 255);
+#badass-cat-button {
+  background-color: rgba(0, 200, 120, 0.8); /* green */
+}
+#badass-cat-button:hover {
+  background-color: rgba(0, 200, 120, 1);
 }
 
-.mean-cat {
-    background-color: rgb(255, 228, 233);
-}
-
-.badass-cat {
-    background-color: rgb(220, 249, 220);
-}
-
-.blue-border {
-    border-style: solid;
-    border-color: blue;
-}
-
-.red-border {
-    border-style: solid;
-    border-color: red;
-}
-
-.green-border {
-    border-style: solid;
-    border-color: green;
-}
-
-.perm-blue-border {
-    border-style: solid;
-    border-color: blue;
-}
-
-.perm-red-border {
-    border-style: solid;
-    border-color: red;
-}
-
-.perm-green-border {
-    border-style: solid;
-    border-color: green;
-}
-
+/* Button Container */
 #button-container {
-    margin: auto;
-    text-align: center;
+  margin-top: 1rem;
+}
+
+/* Cat Container */
+#cat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Individual Cat Block */
+.single-cat-container {
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  max-width: 90vw;
+  width: 400px;
+  transition: transform 0.3s ease;
+}
+.single-cat-container:hover {
+  transform: scale(1.02);
+}
+
+/* Type-Specific Backgrounds */
+.nice-cat {
+  background-color: rgba(102, 204, 255, 0.2); /* light blue */
+}
+.mean-cat {
+  background-color: rgba(255, 69, 58, 0.2); /* light red */
+}
+.badass-cat {
+  background-color: rgba(0, 200, 120, 0.2); /* light green */
+}
+
+/* Cat Image */
+.cat-img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Cat Quote */
+.cat-quote {
+  margin-top: 1rem;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #ffe3ec;
+}
+
+/* Hover Borders */
+.blue-border {
+  border: 4px solid #66ccff;
+}
+.red-border {
+  border: 4px solid #ff4444;
+}
+.green-border {
+  border: 4px solid #00cc88;
+}
+
+/* Permanent Borders */
+.perm-blue-border {
+  border: 4px solid #007acc !important;
+}
+.perm-red-border {
+  border: 4px solid #cc0000 !important;
+}
+.perm-green-border {
+  border: 4px solid #009966 !important;
+}
+
+/* Responsive Text */
+@media (max-width: 500px) {
+  .cat-quote {
+    font-size: 1rem;
+  }
+  button {
+    width: 90%;
+  }
 }
