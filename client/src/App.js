@@ -13,19 +13,19 @@ function App() {
   };
 
   const getNiceQuote = async () => {
-    const resp = await fetch("https://cors-anywhere.herokuapp.com/https://www.affirmations.dev/");
+    const resp = await fetch("http://localhost:5000/api/affirmation");
     const json = await resp.json();
     return json.affirmation;
   };
 
   const getBadassQuote = async () => {
-    const resp = await fetch("https://api.breakingbadquotes.xyz/v1/quotes");
+    const resp = await fetch("http://localhost:5000/api/badass");
     const json = await resp.json();
     return json[0].quote;
   };
 
   const getMeanQuote = async () => {
-    const resp = await fetch("https://cors-anywhere.herokuapp.com/https://evilinsult.com/generate_insult.php?lang=en&type=json");
+    const resp = await fetch("http://localhost:5000/api/insult");
     const json = await resp.json();
     return json.insult;
   };
