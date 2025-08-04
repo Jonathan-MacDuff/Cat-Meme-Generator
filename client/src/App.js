@@ -21,7 +21,7 @@ function App() {
   const getBadassQuote = async () => {
     const resp = await fetch("http://localhost:5000/api/badass");
     const json = await resp.json();
-    return json[0].quote;
+    return json.quote;
   };
 
   const getMeanQuote = async () => {
