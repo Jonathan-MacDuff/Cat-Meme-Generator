@@ -9,6 +9,11 @@ CORS(app)
 def load_quotes(file_path):
     with open(file_path, 'r') as f:
         return json.load(f)
+    
+@app.route('/api/cat')
+def get_cat():
+    cats = load_quotes('data/cats.json')
+    return jsonify({'cat': random.choice(cats)})
 
 @app.route('/api/affirmation')
 def get_affirmation():

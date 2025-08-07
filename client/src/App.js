@@ -7,9 +7,9 @@ function App() {
     const [cats, setCats] = useState([]);
 
   const getCatImg = async () => {
-    const resp = await fetch("https://api.thecatapi.com/v1/images/search?limit=10");
+    const resp = await fetch("http://localhost:5000/api/cat");
     const json = await resp.json();
-    return json[Math.floor(Math.random() * 10)].url;
+    return json.cat;
   };
 
   const getNiceQuote = async () => {
