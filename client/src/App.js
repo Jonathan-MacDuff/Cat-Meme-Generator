@@ -4,28 +4,30 @@ import CatCard from './components/CatCard';
 
 function App() {
 
-    const [cats, setCats] = useState([]);
+  const BACKEND_URL = "http://localhost:5000"
+
+  const [cats, setCats] = useState([]);
 
   const getCatImg = async () => {
-    const resp = await fetch("http://localhost:5000/api/cat");
+    const resp = await fetch(`${BACKEND_URL}/api/cat`);
     const json = await resp.json();
     return json.cat;
   };
 
   const getNiceQuote = async () => {
-    const resp = await fetch("http://localhost:5000/api/affirmation");
+    const resp = await fetch(`${BACKEND_URL}/api/affirmation`);
     const json = await resp.json();
     return json.affirmation;
   };
 
   const getBadassQuote = async () => {
-    const resp = await fetch("http://localhost:5000/api/badass");
+    const resp = await fetch(`${BACKEND_URL}/api/badass`);
     const json = await resp.json();
     return json.quote;
   };
 
   const getMeanQuote = async () => {
-    const resp = await fetch("http://localhost:5000/api/insult");
+    const resp = await fetch(`${BACKEND_URL}/api/insult`);
     const json = await resp.json();
     return json.insult;
   };
